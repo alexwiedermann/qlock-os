@@ -14,6 +14,7 @@
 #include "resources/icons.h"
 #include "themes.h"
 
+
 #define USE_DMA_TO_TFT
 
 TFT_eSPI tft = TFT_eSPI();
@@ -221,14 +222,6 @@ void setup() {
   log(LOG_SUCCESS, "Apps initiliazed");
   initThemes();
   log(LOG_SUCCESS, "Themes initiliazed");
-
-  WiFi.onEvent(WiFiConnected, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_CONNECTED);
-
-  if (wifi_ssid != "") {
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(wifi_ssid.c_str(), wifi_passwd.c_str());
-    log(LOG_SUCCESS, "WiFi connection started");
-  }
 
   themes[currentThemeIndex]->drawHomeUI(tft, rtc, batteryStatus);
   log(LOG_SUCCESS, "Home UI drawn");

@@ -14,6 +14,7 @@
 #include "apps/dino/app_dino.h"
 #include "apps/flashlight/app_flashlight.h"
 #include "apps/racer/app_racer.h"
+#include "apps/wifi_connect/app_wifi_connect.h"
 #include "apps/smartconfig/app_smartconfig.h"
 #include "apps/stopwatch/app_stopwatch.h"
 #include "apps/themes/app_themes.h"
@@ -47,6 +48,7 @@ void initApps() {
   apps.emplace_back(std::move(appRacer));
   apps.emplace_back(std::move(appDino));
   apps.emplace_back(std::move(appThemes));
+  apps.emplace_back(std::move(appWifiConnect));
   apps.emplace_back(std::move(appSmartconfig));
   apps.emplace_back(std::move(appTimeConfig));
   apps.emplace_back(std::move(appAbout));
